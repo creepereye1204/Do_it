@@ -5,14 +5,14 @@ from .models import Post
 
 def index(request):
     posts = Post.objects.all().order_by('-pk')
-    return render(
-        request=request,
-        template_name='blog/index.html',
-        context={
-            'posts': posts
-        }
-    )
+    return render(request=request,
+                  template_name='blog/index.html',
+                  context={'posts': posts})
 
 
-def single_post_page(request):
-    return None
+def single_post_page(request, pk):
+    post = Post.objects.get(pk=pk)
+
+    return render(request=request,
+                  template_name='blog/single_page_post.html',
+                  context={'post': post})

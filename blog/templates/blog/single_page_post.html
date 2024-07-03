@@ -6,14 +6,14 @@
 </head>
 <body>
     <h1>Blog</h1>
-{% for post in posts %}
 
-    <h2><a href="{{post.get_absolute_url}}">{{ post.title }}</a></h2>
+
+    <h2>{{ post.title }}</h2>
     <h4>{{ post.content }}</h4>
     <p>{{ post.created_at }}</p>
 
 
 
-{% endfor %}
+
 </body>
 </html>
